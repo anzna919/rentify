@@ -89,11 +89,11 @@
                     <div>
                         <label class="block text-xs font-bold text-gray-500 mb-1"><i class="fas fa-map-marker-alt text-red-400 mr-1"></i> Area Operasional</label>
                         <select id="homeLokasi" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-gray-700 font-medium focus:outline-none">
-                            <option value="semua">Semua Wilayah</option>
-                            <option value="Dago / Bandung Utara">Dago / Bandung Utara</option>
-                            <option value="Buah Batu / Selatan">Buah Batu / Selatan</option>
-                            <option value="Ciburuy / Barat">Ciburuy / Barat</option>
-                        </select>
+    			<option value="semua">Semua Wilayah</option>
+    			<option value="Jatinangor">Jatinangor</option>
+    			<option value="Bandung">Bandung</option>
+		</select>
+
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-500 mb-1"><i class="fas fa-calendar-alt brand-teal mr-1"></i> Mulai Sewa</label>
@@ -543,9 +543,8 @@
                     <input type="text" id="vProdNama" placeholder="Nama Komoditas / Barang" class="w-full p-2 border rounded focus:outline-none">
                     <input type="number" id="vProdHarga" placeholder="Tarif Rental Per Hari (Rp)" class="w-full p-2 border rounded focus:outline-none">
                     <select id="vProdLokasi" class="w-full p-2 border rounded bg-white focus:outline-none">
-                        <option value="Dago / Bandung Utara">Dago / Bandung Utara</option>
-                        <option value="Buah Batu / Selatan">Buah Batu / Selatan</option>
-                        <option value="Ciburuy / Barat">Ciburuy / Barat</option>
+                        <option value="Jatinangor">Jatinangor</option>
+                        <option value="Bandung">Bandung</option>
                     </select>
                     <button onclick="vendorUploadProdukLogic()" class="w-full bg-brand-teal text-white font-bold py-2 rounded shadow">Publikasikan Katalog</button>
                 </div>
@@ -619,18 +618,18 @@
         };
 
         let DATA_PRODUK = [
-            { id: 1, nama: "Sony Alpha a7 III Mirrorless Camera Professional Set", harga: 250000, lokasi: "Dago / Bandung Utara", rating: "4.9 (18)", icon: "fa-camera", isPremiumVendor: false },
-            { id: 2, nama: "Tenda Camping Consina Magnum Kapasitas 4 Orang", harga: 45000, lokasi: "Buah Batu / Selatan", rating: "4.8 (42)", icon: "fa-campground", isPremiumVendor: false },
-            { id: 3, nama: "DJI Mavic Air 2 Drone Fly More Combo Pack", harga: 180000, lokasi: "Ciburuy / Barat", rating: "5.0 (5)", icon: "fa-helicopter", isPremiumVendor: false },
-            { id: 4, nama: "PlayStation 5 Digital Edition + 2 DualSense Controller", harga: 130000, lokasi: "Dago / Bandung Utara", rating: "4.9 (31)", icon: "fa-gamepad", isPremiumVendor: false },
-            { id: 5, nama: "Insta360 X3 Pocket 360 Action Camera Panoramic v2", harga: 110000, lokasi: "Buah Batu / Selatan", rating: "4.7 (12)", icon: "fa-video", isPremiumVendor: false },
-            { id: 6, nama: "Eiger Tramper 45L Backpack Carrier Adventure Tool", harga: 35000, lokasi: "Ciburuy / Barat", rating: "4.8 (19)", icon: "fa-hiking", isPremiumVendor: false },
-            { id: 7, nama: "MacBook Pro M1 2021 16GB RAM Video Editing Unit", harga: 350000, lokasi: "Dago / Bandung Utara", rating: "5.0 (8)", icon: "fa-laptop", isPremiumVendor: false },
-            { id: 8, nama: "Proyektor Epson EB-X400 3600 Lumens Presentation Kit", harga: 150000, lokasi: "Buah Batu / Selatan", rating: "4.6 (14)", icon: "fa-display", isPremiumVendor: false },
-            { id: 9, nama: "Genset Honda EU22i Portable Silent Generator 2000W", harga: 400000, lokasi: "Ciburuy / Barat", rating: "4.9 (7)", icon: "fa-bolt", isPremiumVendor: false },
-            { id: 10, nama: "Jas Formal Pria Slimfit Premium Wool Warna Hitam", harga: 75000, lokasi: "Dago / Bandung Utara", rating: "4.8 (22)", icon: "fa-shirt", isPremiumVendor: false },
-            { id: 11, nama: "Sepeda Listrik Xiaomi Himo Z20 Folding E-Bike", harga: 95000, lokasi: "Buah Batu / Selatan", rating: "4.7 (15)", icon: "fa-bicycle", isPremiumVendor: false },
-            { id: 12, nama: "Speaker Portable JBL PartyBox 310 Bluetooth Audio", harga: 200000, lokasi: "Ciburuy / Barat", rating: "5.0 (11)", icon: "fa-volume-high", isPremiumVendor: false }
+            { id: 1, nama: "Sony Alpha a7 III Mirrorless Camera Professional Set", harga: 250000, lokasi: "Jatinangor", rating: "4.9 (18)", icon: "fa-camera", isPremiumVendor: false },
+            { id: 2, nama: "Tenda Camping Consina Magnum Kapasitas 4 Orang", harga: 45000, lokasi: "Bandung", rating: "4.8 (42)", icon: "fa-campground", isPremiumVendor: false },
+            { id: 3, nama: "DJI Mavic Air 2 Drone Fly More Combo Pack", harga: 180000, lokasi: "Jatinangor", rating: "5.0 (5)", icon: "fa-helicopter", isPremiumVendor: false },
+            { id: 4, nama: "PlayStation 5 Digital Edition + 2 DualSense Controller", harga: 130000, lokasi: "Bandung", rating: "4.9 (31)", icon: "fa-gamepad", isPremiumVendor: false },
+            { id: 5, nama: "Insta360 X3 Pocket 360 Action Camera Panoramic v2", harga: 110000, lokasi: "Bandung", rating: "4.7 (12)", icon: "fa-video", isPremiumVendor: false },
+            { id: 6, nama: "Eiger Tramper 45L Backpack Carrier Adventure Tool", harga: 35000, lokasi: "Jatinangor", rating: "4.8 (19)", icon: "fa-hiking", isPremiumVendor: false },
+            { id: 7, nama: "MacBook Pro M1 2021 16GB RAM Video Editing Unit", harga: 350000, lokasi: "Jatinangor", rating: "5.0 (8)", icon: "fa-laptop", isPremiumVendor: false },
+            { id: 8, nama: "Proyektor Epson EB-X400 3600 Lumens Presentation Kit", harga: 150000, lokasi: "Bandung", rating: "4.6 (14)", icon: "fa-display", isPremiumVendor: false },
+            { id: 9, nama: "Genset Honda EU22i Portable Silent Generator 2000W", harga: 400000, lokasi: "Jatinangor", rating: "4.9 (7)", icon: "fa-bolt", isPremiumVendor: false },
+            { id: 10, nama: "Jas Formal Pria Slimfit Premium Wool Warna Hitam", harga: 75000, lokasi: "Bandung", rating: "4.8 (22)", icon: "fa-shirt", isPremiumVendor: false },
+            { id: 11, nama: "Sepeda Listrik Xiaomi Himo Z20 Folding E-Bike", harga: 95000, lokasi: "Jatinangor", rating: "4.7 (15)", icon: "fa-bicycle", isPremiumVendor: false },
+            { id: 12, nama: "Speaker Portable JBL PartyBox 310 Bluetooth Audio", harga: 200000, lokasi: "Bandung", rating: "5.0 (11)", icon: "fa-volume-high", isPremiumVendor: false }
         ];
 
         let TRANSAKSI = []; 
