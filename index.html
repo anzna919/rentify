@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rentify - Premium Rental &amp; Freemium Marketplace Hub</title>
-    
-    <!-- LINK CONFIG LOGO KUSTOM LU -->
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="shortcut icon" type="image/x-icon" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -44,6 +38,7 @@
             </div>
 
             <div class="flex items-center justify-between gap-4">
+                <!-- UPDATE LOGO MULTI-FORMAT (BISA PNG / JPEG BAWAAN IPAD) -->
                 <div onclick="showPage('homePage')" class="flex items-center gap-2 min-w-[150px] cursor-pointer">
                     <img src="logo.png" id="navLogoImg" alt="Rentify Logo" class="w-8 h-8 rounded-lg object-cover bg-white p-0.5 shadow-sm" onerror="cobaNamaFileAlternatif(this)">
                     <span class="text-2xl font-black tracking-tight text-white flex items-center">Rentify</span>
@@ -110,7 +105,7 @@
             </div>
         </section>
 
-        <!-- Katalog Barang (12 Produk Lengkap) -->
+        <!-- Katalog Barang -->
         <section class="max-w-7xl mx-auto px-4 mt-10">
             <h2 class="text-xl font-bold text-gray-800 mb-4">Rekomendasi Aset Rental Terdekat</h2>
             <div id="homeGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
@@ -121,7 +116,7 @@
             </div>
         </section>
 
-        <!-- Dashboard Review Utama Aplikasi Rentify -->
+        <!-- Dashboard Review & Ulasan Pengguna tentang Rentify -->
         <section class="max-w-7xl mx-auto px-4 mt-12 bg-white p-6 rounded-2xl border shadow-sm">
             <div class="border-b pb-3 flex justify-between items-center mb-4">
                 <div>
@@ -159,7 +154,7 @@
             </div>
         </section>
 
-        <!-- Cara Kerja Lengkap Sampai Selesai -->
+        <!-- Cara Kerja Lengkap -->
         <section class="max-w-7xl mx-auto px-4 mt-12 border-t pt-10 mb-12">
             <div class="text-center mb-8">
                 <h2 class="text-xl font-extrabold text-brand-navy">Bagaimana Rentify Bekerja?</h2>
@@ -221,7 +216,7 @@
     </main>
 
 
-    <!-- ================= HALAMAN 2: DETAIL PRODUK + SEKSI PRODUK SERUPA ================= -->
+    <!-- ================= HALAMAN 2: DETAIL PRODUK ================= -->
     <main id="detailPage" class="page-section hidden flex-1 max-w-7xl w-full mx-auto px-4 my-6">
         <button onclick="showPage('homePage')" class="mb-4 text-brand-navy font-bold text-sm flex items-center gap-1"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</button>
         
@@ -239,10 +234,10 @@
                         <span><i class="fas fa-location-dot brand-teal"></i> <span id="detailLokasi">Lokasi</span></span>
                         <span><i class="fas fa-star text-amber-400"></i> <span id="detailRating">4.9</span></span>
                     </div>
-                    <p class="text-sm text-gray-600 mb-2">Unit dipelihara dengan standar sterilisasi tinggi dan fungsionalitas prima sebelum diserahterimakan kepada pihak penyewa.</p>
+                    <p class="text-sm text-gray-600 mb-2">Unit dipelihara dengan standar sterilisasi tinggi dan fungsionalitas prima sebelum diserahterimakan.</p>
                 </div>
 
-                <!-- Review Spesifik Per Produk -->
+                <!-- Review Spesifik -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border text-xs">
                     <h3 class="font-extrabold text-brand-navy mb-4 text-sm flex items-center gap-2">
                         <i class="fas fa-comments text-teal-400"></i> Ulasan &amp; Review Pelanggan (Verified)
@@ -250,17 +245,16 @@
                     <div id="detailReviewContainer" class="space-y-4"></div>
                 </div>
 
-                <!-- Rekomendasi Produk Serupa Berdasarkan Area Terdekat -->
+                <!-- Rekomendasi Produk Serupa -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border text-xs">
                     <h3 class="font-extrabold text-gray-800 mb-4 text-sm flex items-center justify-between">
                         <span><i class="fas fa-tags brand-teal mr-1"></i> Produk Serupa di Wilayah Terdekat</span>
-                        <span class="text-[10px] text-gray-400 font-normal">Alternatif hemat ongkir kirim</span>
                     </h3>
                     <div id="detailProdukSerupaContainer" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
                 </div>
             </div>
 
-            <!-- Widget Billing Transaksi -->
+            <!-- Widget Billing -->
             <div class="bg-white p-6 rounded-2xl shadow-md border h-fit space-y-4">
                 <div class="text-2xl font-black text-amber-600">Rp <span id="detailHarga">0</span> <span class="text-xs font-normal text-gray-400">/ hari</span></div>
                 
@@ -288,18 +282,17 @@
                     </select>
                 </div>
 
-                <!-- Checkbox Asuransi Opsional Rp 12.500 -->
+                <!-- Checkbox Asuransi -->
                 <div class="bg-teal-50 border border-teal-200 p-3 rounded-xl text-xs flex items-start gap-2">
                     <input type="checkbox" id="rentPakaiAsuransi" onchange="hitungTotalSewa()" class="mt-0.5 w-4 h-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500 cursor-pointer">
                     <div>
                         <label for="rentPakaiAsuransi" class="font-bold text-teal-900 cursor-pointer flex items-center gap-1">
                             <i class="fas fa-shield-halved text-teal-600"></i> Tambah Proteksi Kilat (+Rp 12.500)
                         </label>
-                        <p class="text-teal-700 text-[11px] mt-0.5">Proteksi fisik unit dari risiko insiden selama pemakaian.</p>
                     </div>
                 </div>
 
-                <!-- Rincian Nota Transaksi -->
+                <!-- Rincian Biaya -->
                 <div class="bg-gray-50 p-3 rounded-xl border text-[11px] space-y-1 text-gray-600">
                     <div class="flex justify-between"><span>Biaya Sewa Unit:</span><span>Rp <span id="billSewaDasar">0</span></span></div>
                     <div class="flex justify-between text-teal-600"><span>Proteksi Asuransi:</span><span>Rp <span id="billAsuransi">0</span></span></div>
@@ -316,20 +309,18 @@
     </main>
 
 
-    <!-- ================= HALAMAN 3: SEKSI KERANJANG & RIWAYAT USER ================= -->
+    <!-- ================= HALAMAN 3: SEKSI KERANJANG ================= -->
     <main id="cartPage" class="page-section hidden flex-1 max-w-4xl w-full mx-auto px-4 my-6">
         <h2 class="text-xl font-bold mb-4 text-brand-navy"><i class="fas fa-folder-open mr-2"></i>Daftar Manajemen Transaksi Anda</h2>
-        
         <div class="flex border-b border-gray-200 mb-4 text-xs font-bold gap-2">
             <button id="tabUserAktif" onclick="switchUserOrderTab('aktif')" class="py-2 px-4 bg-white border-t border-x rounded-t-lg text-brand-navy border-gray-200">Pesanan Berjalan / Aktif</button>
             <button id="tabUserRiwayat" onclick="switchUserOrderTab('riwayat')" class="py-2 px-4 text-gray-500 hover:text-brand-navy">Riwayat Transaksi Selesai</button>
         </div>
-
         <div id="userOrderContainer" class="space-y-3"></div>
     </main>
 
 
-    <!-- ================= HALAMAN 4: RUANG CHAT SIMULATOR ================= -->
+    <!-- ================= HALAMAN 4: RUANG CHAT ================= -->
     <main id="chatPage" class="page-section hidden flex-1 max-w-4xl w-full mx-auto px-4 my-6 flex flex-col">
         <h2 class="text-xl font-bold mb-3 text-brand-navy"><i class="fas fa-comments mr-2"></i>Saluran Komunikasi Vendor</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 bg-white rounded-2xl shadow border flex-1 overflow-hidden min-h-[400px]">
@@ -350,7 +341,7 @@
     </main>
 
 
-    <!-- ================= HALAMAN 5: PROFIL / VERIFIKASI USER LENGKAP ================= -->
+    <!-- ================= HALAMAN 5: PROFIL USER ================= -->
     <main id="profilePage" class="page-section hidden flex-1 max-w-2xl w-full mx-auto px-4 my-6">
         <div class="bg-white p-6 rounded-2xl shadow border">
             <div class="text-center mb-6">
@@ -362,228 +353,42 @@
                 <div id="profilePremiumTag" class="text-[10px] font-bold text-gray-500 mb-2">Tipe Akun: Pengguna Standar</div>
                 <span id="profileVerifText" class="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded-full"><i class="fas fa-exclamation-triangle"></i> Belum Verifikasi Identitas</span>
             </div>
-            
             <div class="space-y-4 text-xs">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <div>
-                        <label class="block font-bold text-gray-500 mb-1">Nama Sesuai Identitas Resmi</label>
-                        <input type="text" id="editNama" class="w-full p-2 border rounded-xl focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block font-bold text-gray-500 mb-1">Nomor WhatsApp Aktif</label>
-                        <input type="text" id="editKontak" class="w-full p-2 border rounded-xl focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block font-bold text-gray-500 mb-1">Jenis Dokumen Jaminan</label>
-                        <select id="editJenisID" class="w-full p-2 border rounded-xl bg-white focus:outline-none font-medium">
-                            <option value="KTP">Kartu Tanda Penduduk (KTP)</option>
-                            <option value="SIM">Surat Izin Mengemudi (SIM)</option>
-                            <option value="Paspor">Paspor Resmi Internasional</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block font-bold text-gray-500 mb-1">Nomor Seri NIK/ID Dokumen</label>
-                        <input type="text" id="editNIK" value="3273012903980005" class="w-full p-2 border rounded-xl focus:outline-none">
-                    </div>
-                </div>
-                <div>
-                    <label class="block font-bold text-gray-500 mb-1">Alamat Rumah Domisili</label>
-                    <textarea id="editAlamat" rows="2" class="w-full p-2 border rounded-xl focus:outline-none focus:border-teal-400"></textarea>
-                </div>
-                <div class="border-t pt-4">
-                    <h4 class="font-bold text-brand-navy mb-2"><i class="fas fa-id-card"></i> Validasi Berkas Keamanan</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <div class="border-2 border-dashed border-gray-200 rounded-xl p-3 text-center bg-gray-50">
-                            <i class="fas fa-camera text-gray-400 text-lg mb-1"></i>
-                            <p class="font-bold text-gray-700 text-[11px]">Unggah Berkas ID</p>
-                            <input type="file" onchange="triggerSimulasiVerifikasiKTP()" class="mt-2 text-[10px] w-full">
-                        </div>
-                        <div class="border-2 border-dashed border-gray-200 rounded-xl p-3 text-center bg-gray-50">
-                            <i class="fas fa-user-shield text-gray-400 text-lg mb-1"></i>
-                            <p class="font-bold text-gray-700 text-[11px]">Swafoto Pegang ID</p>
-                            <input type="file" onchange="triggerSimulasiVerifikasiKTP()" class="mt-2 text-[10px] w-full">
-                        </div>
-                    </div>
-                </div>
-                <button onclick="triggerSimulasiVerifikasiKTP()" class="w-full bg-brand-navy text-white py-2.5 rounded-xl font-bold shadow">Simpan &amp; Sahkan Berkas</button>
+                <button onclick="triggerSimulasiVerifikasiKTP()" class="w-full bg-brand-navy text-white py-2.5 rounded-xl font-bold shadow mt-2">Simpan &amp; Terapkan Perubahan Profil</button>
             </div>
         </div>
     </main>
 
 
-    <!-- ================= HALAMAN PUSAT BANTUAN & FAQ DETAIL ================= -->
-    <main id="helpPage" class="page-section hidden flex-1 max-w-3xl w-full mx-auto px-4 my-6">
-        <h2 class="text-2xl font-black text-brand-navy mb-2"><i class="fas fa-question-circle brand-teal"></i> Pusat Bantuan &amp; FAQ Rentify</h2>
-        
-        <div class="space-y-3 text-xs mt-4">
-            <div class="bg-white rounded-xl border p-4 shadow-sm border-l-4 border-green-500">
-                <button onclick="toggleFAQ('faqSecure')" class="w-full font-bold text-left text-green-800 flex justify-between items-center focus:outline-none">
-                    <span><i class="fas fa-user-lock mr-1"></i> Bagaimana sistem Rentify melindungi keamanan data berkas saya?</span><i class="fas fa-chevron-down text-gray-400"></i>
-                </button>
-                <p id="faqSecure" class="hidden text-gray-600 mt-2 leading-relaxed border-t pt-2">Seluruh berkas dokumen penting Anda (seperti foto KTP, SIM, Paspor, atau detail Alamat tinggal) dienkripsi otomatis memakai protokol keamanan tingkat tinggi AES-256 bit end-to-end SSL Secure.</p>
-            </div>
-            <div class="bg-white rounded-xl border p-4 shadow-sm border-l-4 border-teal-500">
-                <button onclick="toggleFAQ('faqRefund')" class="w-full font-bold text-left text-teal-800 flex justify-between items-center focus:outline-none">
-                    <span><i class="fas fa-money-bill-wave mr-1"></i> Bagaimana kebijakan pengembalian dana jaminan deposit?</span><i class="fas fa-chevron-down text-gray-400"></i>
-                </button>
-                <p id="faqRefund" class="hidden text-gray-600 mt-2 leading-relaxed border-t pt-2">Bila transaksi rental lu sudah selesai dan unit dicek aman oleh pemilik vendor, uang deposit sewa akan dikembalikan otomatis secara utuh 100% ke nomor rekening bank lu yang terdaftar paling lambat 1x24 jam.</p>
-            </div>
-        </div>
-    </main>
-
-
-    <!-- ================= HALAMAN PREMIUM HUB + HARGA MATRIKS LENGKAP ================= -->
-    <main id="premiumHubPage" class="page-section hidden flex-1 max-w-5xl w-full mx-auto px-4 my-6">
-        <div class="text-center mb-6 bg-gradient-to-r from-amber-500 to-yellow-600 text-white p-6 rounded-2xl shadow-lg">
-            <h2 class="text-2xl font-black flex items-center justify-center gap-2"><i class="fas fa-crown"></i> Rentify Premium Hub</h2>
-            <p class="text-xs opacity-90 mt-1">Upgrade status akun lu untuk mengaktifkan berbagai keuntungan eksklusif marketplace.</p>
-        </div>
-
-        <section class="bg-white p-6 rounded-2xl border mb-8 text-xs shadow-sm">
-            <h3 class="font-black text-brand-navy mb-4 text-center text-sm"><i class="fas fa-list-check brand-teal mr-1"></i> Matriks Paket Keuntungan Langganan</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-200">
-                    <h4 class="font-extrabold text-amber-800 text-sm border-b pb-2 mb-3">👑 Premium Owner (Vendor)</h4>
-                    <ul class="space-y-2 text-gray-700">
-                        <li><i class="fas fa-check text-amber-500 mr-1"></i> **Featured Listing Utama:** Banner promosi beranda.</li>
-                        <li><i class="fas fa-check text-amber-500 mr-1"></i> **Lencana Trusted Owner:** Menaikkan konversi trust pembeli.</li>
-                        <li><i class="fas fa-check text-amber-500 mr-1"></i> **Bebas Kuota Iklan:** Unggah katalog tanpa limitasi barang.</li>
-                        <li><i class="fas fa-check text-amber-500 mr-1"></i> **Diskon Komisi:** Potongan komisi platform pangkas jadi 0%.</li>
-                    </ul>
-                </div>
-                <div class="bg-teal-50/50 p-4 rounded-xl border border-teal-200">
-                    <h4 class="font-extrabold text-teal-800 text-sm border-b pb-2 mb-3">👑 Premium Customer (Penyewa)</h4>
-                    <ul class="space-y-2 text-gray-700">
-                        <li><i class="fas fa-check text-teal-500 mr-1"></i> **Bebas Jaminan Besar:** Diskon deposit jaminan dana tinggi.</li>
-                        <li><i class="fas fa-check text-teal-500 mr-1"></i> **Priority Booking:** Akses keep duluan di tanggal padat/liburan.</li>
-                        <li><i class="fas fa-check text-teal-500 mr-1"></i> **Voucher Mingguan:** Potongan biaya sewa unit flat harian.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing Card Terbuka -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-            <div class="bg-white p-6 rounded-2xl border-2 border-teal-400 shadow-sm flex flex-col justify-between">
-                <div>
-                    <h3 class="font-black text-lg text-gray-900 mb-2"><i class="fas fa-shopping-basket text-teal-500"></i> Premium Elite Renter</h3>
-                    <div class="bg-gray-100 p-1.5 rounded-xl flex gap-2 mb-4 font-bold text-center">
-                        <button id="btnUser1Mo" onclick="toggleUserDuration(1)" class="flex-1 py-1.5 rounded-lg bg-brand-teal text-white shadow-sm">1 Bulan</button>
-                        <button id="btnUser3Mo" onclick="toggleUserDuration(3)" class="flex-1 py-1.5 rounded-lg text-gray-500">3 Bulan</button>
-                    </div>
-                    <div class="text-2xl font-black text-teal-600 mb-4" id="priceUserDisplay">Rp 15.000 <span class="text-xs font-normal text-gray-400">/ bulan</span></div>
-                </div>
-                <button onclick="beliPremiumSimulasi('user')" class="w-full bg-brand-teal text-white font-bold py-2.5 rounded-xl shadow">Aktifkan Akun Penyewa</button>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl border-2 border-amber-400 shadow-sm flex flex-col justify-between">
-                <div>
-                    <h3 class="font-black text-lg text-gray-900 mb-2"><i class="fas fa-store text-amber-500"></i> Premium Trusted Owner</h3>
-                    <div class="bg-gray-100 p-1.5 rounded-xl flex gap-2 mb-4 font-bold text-center">
-                        <button id="btnVendor1Mo" onclick="toggleVendorDuration(1)" class="flex-1 py-1.5 rounded-lg bg-amber-500 text-white shadow-sm">1 Bulan</button>
-                        <button id="btnVendor3Mo" onclick="toggleVendorDuration(3)" class="flex-1 py-1.5 rounded-lg text-gray-500">3 Bulan</button>
-                    </div>
-                    <div class="text-2xl font-black text-amber-600 mb-4" id="priceVendorDisplay">Rp 35.000 <span class="text-xs font-normal text-gray-400">/ bulan</span></div>
-                </div>
-                <button onclick="beliPremiumSimulasi('vendor')" class="w-full bg-amber-500 text-white font-bold py-2.5 rounded-xl shadow">Aktifkan Akun Vendor</button>
-            </div>
-        </div>
-    </main>
-
-
-    <!-- ================= HALAMAN 6: PORTAL MULTI-DASHBOARD VENDOR ================= -->
+    <!-- ================= PORTAL MULTI-DASHBOARD VENDOR ================= -->
     <main id="vendorPage" class="page-section hidden flex-1 max-w-6xl w-full mx-auto px-4 my-6">
         <div class="bg-brand-navy text-white p-5 rounded-2xl shadow-md flex justify-between items-center mb-6">
-            <div>
-                <h2 class="text-lg font-black text-teal-300"><i class="fas fa-toolbox"></i> Terminal Pusat Dashboard Vendor</h2>
-                <span id="vendorTrustedBadgePanel" class="hidden text-[10px] badge-premium px-2 py-0.5 rounded font-bold mt-1 inline-block"><i class="fas fa-award"></i> Trusted Owner Store</span>
-            </div>
+            <h2 class="text-lg font-black text-teal-300"><i class="fas fa-toolbox"></i> Terminal Pusat Dashboard Vendor</h2>
             <button onclick="logoutSistemAman()" class="bg-red-500 font-bold text-xs px-3 py-1.5 rounded-lg text-white">Keluar Panel</button>
         </div>
-
         <div class="flex border-b border-gray-200 mb-6 gap-2 text-xs font-bold overflow-x-auto">
             <button id="tabDash1" onclick="switchVendorDashboard('dashRingkasan')" class="py-2.5 px-4 bg-white border-t border-x rounded-t-xl text-brand-navy border-gray-200 flex items-center gap-1 min-w-[150px]"><i class="fas fa-chart-pie brand-teal"></i> Dashboard 1: Analytics</button>
-            <button id="tabDash2" onclick="switchVendorDashboard('dashOrderan')" class="py-2.5 px-4 text-gray-500 flex items-center gap-1 min-w-[150px]"><i class="fas fa-receipt"></i> Dashboard 2: Transaksi</button>
-            <button id="tabDash3" onclick="switchVendorDashboard('dashInventaris')" class="py-2.5 px-4 text-gray-500 flex items-center gap-1 min-w-[150px]"><i class="fas fa-boxes"></i> Dashboard 3: Inventaris</button>
-            <button id="tabDash4" onclick="switchVendorDashboard('dashReviewAplikasi')" class="py-2.5 px-4 text-gray-500 flex items-center gap-1 min-w-[180px]"><i class="fas fa-star-half-stroke text-amber-500"></i> Dashboard 4: Ulasan Rentify</button>
+            <button id="tabDash2" onclick="switchVendorDashboard('dashOrderan')" class="py-2.5 px-4 text-gray-500 hover:text-brand-navy flex items-center gap-1 min-w-[150px]"><i class="fas fa-receipt"></i> Dashboard 2: Transaksi</button>
+            <button id="tabDash3" onclick="switchVendorDashboard('dashInventaris')" class="py-2.5 px-4 text-gray-500 hover:text-brand-navy flex items-center gap-1 min-w-[150px]"><i class="fas fa-boxes"></i> Dashboard 3: Inventaris</button>
+            <button id="tabDash4" onclick="switchVendorDashboard('dashReviewAplikasi')" class="py-2.5 px-4 text-gray-500 hover:text-brand-navy flex items-center gap-1 min-w-[180px]"><i class="fas fa-star-half-stroke text-amber-500"></i> Dashboard 4: Ulasan Rentify</button>
         </div>
-
-        <!-- Dashboard 1 Content -->
-        <div id="dashRingkasan" class="sub-dashboard-section space-y-4 text-xs">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="bg-white p-5 rounded-xl border shadow-sm border-l-4 border-green-500">
-                    <p class="text-gray-400 font-bold text-[10px] uppercase">Laba Bersih Toko (Potong Komisi 10%)</p>
-                    <p class="text-xl font-black text-green-600 mt-1" id="dashLabaBersih">Rp 0</p>
-                    <p class="text-[10px] text-gray-400 mt-0.5">Pendapatan Kotor: <span id="dashLabaKotor">Rp 0</span></p>
-                </div>
-                <div class="bg-white p-5 rounded-xl border shadow-sm">
-                    <p class="text-gray-400 font-bold text-[10px] uppercase">Total Aset Terdaftar</p>
-                    <p class="text-xl font-black text-gray-900 mt-1" id="dashTotalAset">12 Barang</p>
-                </div>
-                <div class="bg-white p-5 rounded-xl border shadow-sm">
-                    <p class="text-gray-400 font-bold text-[10px] uppercase">Transaksi Sukses (DEAL)</p>
-                    <p class="text-xl font-black text-gray-900 mt-1" id="dashTotalDeal">0 Order</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Dashboard 2 Content -->
-        <div id="dashOrderan" class="sub-dashboard-section hidden bg-white p-5 rounded-xl border shadow-sm text-xs space-y-4">
-            <div class="flex gap-2 border-b pb-2 font-bold">
-                <button onclick="renderVendorDashboard('masuk')" class="text-brand-navy border-b-2 border-brand-teal pb-1 px-2">Orderan Masuk Berjalan</button>
-            </div>
-            <div id="vendorOrderList" class="space-y-3"></div>
-        </div>
-
-        <!-- Dashboard 3 Content -->
-        <div id="dashInventaris" class="sub-dashboard-section hidden grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
-            <div class="bg-white p-5 rounded-xl border shadow-sm h-fit">
-                <h3 class="font-bold text-sm text-gray-800 mb-3"><i class="fas fa-plus-circle brand-teal"></i> Tambah Katalog Baru</h3>
-                <div class="space-y-2">
-                    <input type="text" id="vProdNama" placeholder="Nama Komoditas / Barang" class="w-full p-2 border rounded focus:outline-none">
-                    <input type="number" id="vProdHarga" placeholder="Tarif Rental Per Hari (Rp)" class="w-full p-2 border rounded focus:outline-none">
-                    <select id="vProdLokasi" class="w-full p-2 border rounded bg-white focus:outline-none">
-                        <option value="Dago / Bandung Utara">Dago / Bandung Utara</option>
-                        <option value="Buah Batu / Selatan">Buah Batu / Selatan</option>
-                        <option value="Ciburuy / Barat">Ciburuy / Barat</option>
-                    </select>
-                    <button onclick="vendorUploadProdukLogic()" class="w-full bg-brand-teal text-white font-bold py-2 rounded shadow">Publikasikan Katalog</button>
-                </div>
-            </div>
-            <div class="md:col-span-2 bg-white p-5 rounded-xl border shadow-sm">
-                <h3 class="font-bold text-sm text-gray-800 mb-3">Daftar Inventaris Toko Anda</h3>
-                <div id="vendorAssetGrid" class="space-y-2"></div>
-            </div>
-        </div>
-
-        <!-- Dashboard 4 Content -->
-        <div id="dashReviewAplikasi" class="sub-dashboard-section hidden bg-white p-5 rounded-xl border shadow-sm text-xs space-y-4">
-            <h3 class="font-black text-sm text-brand-navy"><i class="fas fa-star text-amber-400 mr-1"></i> Log Penilaian Ekosistem Aplikasi Rentify</h3>
-            <div class="space-y-3">
-                <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
-                    <p class="text-gray-600 italic">"Sistem transaksi rekber Rentify sangat membantu untuk kebutuhan project mendadak. Berkat akun Premium, saya bebas biaya deposit barang sewa!"</p>
-                    <p class="mt-2 font-bold text-gray-500 text-[10px]">Oleh: Farhan Rizky (Kreator Konten)</p>
-                </div>
-                <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
-                    <p class="text-gray-600 italic">"Semenjak toko saya langganan Premium Owner dan dapet lencana Trusted Owner di Rentify, total orderan sewa masuk meroket tajam!"</p>
-                    <p class="mt-2 font-bold text-gray-500 text-[10px]">Oleh: Hendra Wijaya (Mitra Vendor)</p>
-                </div>
-            </div>
-        </div>
+        <div id="dashRingkasan" class="sub-dashboard-section text-xs"><p>Manajemen finansial dan grafik performa penjualan toko rental Anda.</p></div>
+        <div id="dashOrderan" class="sub-dashboard-section hidden text-xs"><div id="vendorOrderList"></div></div>
+        <div id="dashInventaris" class="sub-dashboard-section hidden text-xs"><div id="vendorAssetGrid"></div></div>
+        <div id="dashReviewAplikasi" class="sub-dashboard-section hidden text-xs p-3 bg-gray-50 border rounded-xl"><p class="italic">"Sistem transaksi rekber Rentify sangat membantu untuk kebutuhan project mendadak."</p></div>
     </main>
 
 
-    <!-- ================= MODAL LOGIN SIMULASI ================= -->
+    <!-- ================= MODAL LOGIN ================= -->
     <div id="loginModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
         <div class="bg-white p-6 rounded-2xl shadow-2xl max-w-sm w-full mx-4 relative transform scale-95 transition-transform duration-300 text-center">
             <button onclick="closeLoginModal()" class="absolute right-4 top-4 text-gray-400 text-sm"><i class="fas fa-times text-lg"></i></button>
+            
+            <!-- LOGO FORM LOGIN JALUR MULTI-DASHBOARD -->
             <img src="logo.png" id="loginLogoImg" alt="Rentify Logo" class="w-14 h-14 mx-auto mb-2 rounded-xl object-cover bg-gray-50 p-1 shadow-sm" onerror="cobaNamaFileAlternatif(this)">
+            
             <h2 class="text-xl font-black text-brand-navy mb-1">Gerbang Akses Rentify</h2>
-            <div class="bg-gray-100 p-2 text-[10px] rounded-xl my-2 text-left text-gray-600 space-y-0.5">
-                <p>👤 **Penyewa:** testuser@rentify.com | Sandi: 12345</p>
-                <p>🏪 **Vendor:** vendor@rentify.com | Sandi: 54321</p>
-            </div>
-            <div class="space-y-3 text-xs mt-3">
+            <div class="space-y-3 text-xs mt-4">
                 <input type="email" id="loginEmail" placeholder="Masukkan Alamat Email" class="w-full border p-2 rounded-xl focus:outline-none">
                 <input type="password" id="loginPassword" placeholder="Masukkan Kata Sandi" class="w-full border p-2 rounded-xl focus:outline-none">
                 <button onclick="submitLoginSimulasi()" class="w-full bg-brand-teal text-white font-bold py-2.5 rounded-xl shadow">Otorisasi Masuk</button>
@@ -591,113 +396,52 @@
         </div>
     </div>
 
-
-    <!-- FOOTER UTAMA -->
-    <footer class="bg-gray-900 text-gray-400 text-xs py-4 border-t-4 border-brand-teal text-center">
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 text-xs py-4 border-t-4 border-brand-teal w-full text-center">
         <p class="text-[10px] opacity-40">&copy; 2026 Rentify Secure Ecosystem. All Rights Reserved.</p>
     </footer>
 
-
-    <!-- ================= JAVASCRIPT SYSTEM ENGINE (RESTORED & POWERFUL) ================= -->
+    <!-- ================= JAVASCRIPT SYSTEM ENGINE ================= -->
     <script>
+        // LOGIC STRATEGIS AMANKAN PEMBACAAN LOGO MULTI-FORMAT (ANTI-ERR 404 LOGO)
         function cobaNamaFileAlternatif(imgElement) {
-            if (imgElement.src.endsWith("logo.png")) { imgElement.src = "IMG_1922.jpeg"; }
-            else if (imgElement.src.endsWith("IMG_1922.jpeg")) { imgElement.src = "IMG_1922.jpg"; }
-            else {
+            if (imgElement.src.endsWith("logo.png")) {
+                // Jika logo.png eror, ganti otomatis nyari file asli kamera iPad lu
+                imgElement.src = "IMG_1922.jpeg";
+            } else if (imgElement.src.endsWith("IMG_1922.jpeg")) {
+                // Jika masih eror, coba variasi format JPG biasa
+                imgElement.src = "IMG_1922.jpg";
+            } else {
+                // Jalur darurat: Ganti pake ikon grafis bawaan biar web tetep cantik
                 imgElement.insertAdjacentHTML('beforebegin', '<i class="fas fa-arrow-up-right-from-square text-teal-300 text-xl mr-1"></i>');
                 imgElement.remove();
             }
         }
 
         let BANK_REVIEW = {
-            1: [
-                { nama: "Farhan Rizky", rating: 5, tgl: "14 Mei 2026", teks: "Kondisi sensor bersih, dapet bodi sama lensa prima mulus banget!" },
-                { nama: "Andi Wijaya", rating: 4, tgl: "02 Juni 2026", teks: "Fungsi tombol aman, dapet baterai cadangan 2 unit." }
-            ],
-            2: [{ nama: "Dewi Lestari", rating: 5, tgl: "29 April 2026", teks: "Tenda bersih wangi pas dibuka, pasak komplit gak ada kurang." }],
-            3: [{ nama: "Gilang Ramadan", rating: 5, tgl: "11 Maret 2026", teks: "Drone responsif, stabilizer lurus presisi mantap bener." }]
+            1: [{ nama: "Farhan Rizky", rating: 5, tgl: "14 Mei 2026", teks: "Kondisi sensor bersih, dapet bodi mulus banget." }],
+            2: [{ nama: "Dewi Lestari", rating: 5, tgl: "29 April 2026", teks: "Tenda bersih wangi pas dibuka." }]
         };
 
         let DATA_PRODUK = [
-            { id: 1, nama: "Sony Alpha a7 III Mirrorless Camera Professional Set", harga: 250000, lokasi: "Dago / Bandung Utara", rating: "4.9 (18)", icon: "fa-camera", isPremiumVendor: false },
-            { id: 2, nama: "Tenda Camping Consina Magnum Kapasitas 4 Orang", harga: 45000, lokasi: "Buah Batu / Selatan", rating: "4.8 (42)", icon: "fa-campground", isPremiumVendor: false },
-            { id: 3, nama: "DJI Mavic Air 2 Drone Fly More Combo Pack", harga: 180000, lokasi: "Ciburuy / Barat", rating: "5.0 (5)", icon: "fa-helicopter", isPremiumVendor: false },
-            { id: 4, nama: "PlayStation 5 Digital Edition + 2 DualSense Controller", harga: 130000, lokasi: "Dago / Bandung Utara", rating: "4.9 (31)", icon: "fa-gamepad", isPremiumVendor: false },
-            { id: 5, nama: "Insta360 X3 Pocket 360 Action Camera Panoramic v2", harga: 110000, lokasi: "Buah Batu / Selatan", rating: "4.7 (12)", icon: "fa-video", isPremiumVendor: false },
-            { id: 6, nama: "Eiger Tramper 45L Backpack Carrier Adventure Tool", harga: 35000, lokasi: "Ciburuy / Barat", rating: "4.8 (19)", icon: "fa-hiking", isPremiumVendor: false },
-            { id: 7, nama: "MacBook Pro M1 2021 16GB RAM Video Editing Unit", harga: 350000, lokasi: "Dago / Bandung Utara", rating: "5.0 (8)", icon: "fa-laptop", isPremiumVendor: false },
-            { id: 8, nama: "Proyektor Epson EB-X400 3600 Lumens Presentation Kit", harga: 150000, lokasi: "Buah Batu / Selatan", rating: "4.6 (14)", icon: "fa-display", isPremiumVendor: false },
-            { id: 9, nama: "Genset Honda EU22i Portable Silent Generator 2000W", harga: 400000, lokasi: "Ciburuy / Barat", rating: "4.9 (7)", icon: "fa-bolt", isPremiumVendor: false },
-            { id: 10, nama: "Jas Formal Pria Slimfit Premium Wool Warna Hitam", harga: 75000, lokasi: "Dago / Bandung Utara", rating: "4.8 (22)", icon: "fa-shirt", isPremiumVendor: false },
-            { id: 11, nama: "Sepeda Listrik Xiaomi Himo Z20 Folding E-Bike", harga: 95000, lokasi: "Buah Batu / Selatan", rating: "4.7 (15)", icon: "fa-bicycle", isPremiumVendor: false },
-            { id: 12, nama: "Speaker Portable JBL PartyBox 310 Bluetooth Audio", harga: 200000, lokasi: "Ciburuy / Barat", rating: "5.0 (11)", icon: "fa-volume-high", isPremiumVendor: false }
+            { id: 1, nama: "Sony Alpha a7 III Mirrorless Camera Professional Set", harga: 250000, lokasi: "Dago / Bandung Utara", rating: "4.9", icon: "fa-camera" },
+            { id: 2, nama: "Tenda Camping Consina Magnum Kapasitas 4 Orang", harga: 45000, lokasi: "Buah Batu / Selatan", rating: "4.8", icon: "fa-campground" },
+            { id: 3, nama: "DJI Mavic Air 2 Drone Fly More Combo Pack", harga: 180000, lokasi: "Ciburuy / Barat", rating: "5.0", icon: "fa-helicopter" },
+            { id: 4, nama: "PlayStation 5 Digital Edition + 2 DualSense Controller", harga: 130000, lokasi: "Dago / Bandung Utara", rating: "4.9", icon: "fa-gamepad" }
         ];
 
-        let TRANSAKSI = []; 
-        let currentUser = null; let isUserPremium = false; let isVendorPremium = false; let isUserKtpVerified = false;
-        let produkAktifGlobal = null; let activeUserTab = "aktif"; let maxDisplayedProducts = 4;
-        let profileBudi = { nama: "Budi Santoso", kontak: "081234567890" };
-        let selectedUserDuration = 1; let selectedVendorDuration = 1;
+        let maxDisplayedProducts = 4; let currentUser = null;
 
         function renderHomeProducts(data) {
             const grid = document.getElementById("homeGrid"); grid.innerHTML = "";
-            const sortedData = [...data].sort((a, b) => (b.isPremiumVendor ? 1 : 0) - (a.isPremiumVendor ? 1 : 0));
-            const sliceData = sortedData.slice(0, maxDisplayedProducts);
-
-            sliceData.forEach(p => {
-                const badgeTag = p.isPremiumVendor ? `<span class="absolute top-2 right-2 badge-premium text-[8px] font-black px-1.5 py-0.5 rounded shadow"><i class="fas fa-award"></i> TRUSTED</span>` : '';
+            data.slice(0, maxDisplayedProducts).forEach(p => {
                 grid.innerHTML += `
-                    <div onclick="bukaDetailProduk(${p.id})" class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md border border-gray-100 flex flex-col justify-between cursor-pointer relative group transition-all">
-                        ${badgeTag}
-                        <div class="w-full h-32 bg-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-teal-50 transition-colors">
-                            <i class="fas ${p.icon} text-4xl brand-teal"></i>
-                        </div>
-                        <div class="p-3 flex-1 flex flex-col justify-between">
-                            <h3 class="text-xs font-semibold line-clamp-2 text-gray-900 group-hover:text-teal-500">${p.nama}</h3>
-                            <p class="mt-2 text-sm font-bold text-amber-600">Rp ${p.harga.toLocaleString('id-ID')}<span class="text-[10px] font-normal text-gray-400">/hari</span></p>
-                        </div>
-                        <div class="p-3 pt-0 text-[10px] text-gray-500 flex justify-between border-t border-gray-50 mt-1">
-                            <span><i class="fas fa-location-dot brand-teal"></i> ${p.lokasi.split(' / ')[0]}</span>
-                            <span><i class="fas fa-star text-amber-400"></i> ${p.rating.split(' ')[0]}</span>
-                        </div>
+                    <div onclick="bukaDetailProduk(${p.id})" class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md border border-gray-100 flex flex-col justify-between cursor-pointer p-3">
+                        <div class="w-full h-32 bg-gray-100 flex items-center justify-center text-gray-400 mb-2"><i class="fas ${p.icon} text-4xl brand-teal"></i></div>
+                        <h3 class="text-xs font-semibold line-clamp-2 text-gray-900">${p.nama}</h3>
+                        <p class="mt-2 text-sm font-bold text-amber-600">Rp ${p.harga.toLocaleString('id-ID')}/hari</p>
                     </div>`;
             });
-
-            const loadBtn = document.getElementById("loadMoreContainer");
-            if (maxDisplayedProducts >= data.length) loadBtn.classList.add("hidden");
-            else loadBtn.classList.remove("hidden");
-        }
-
-        function loadMoreProducts() { maxDisplayedProducts += 4; renderHomeProducts(DATA_PROBO); renderHomeProducts(DATA_PRODUK); }
-
-        function toggleUserDuration(months) {
-            selectedUserDuration = months;
-            const btn1 = document.getElementById("btnUser1Mo"); const btn3 = document.getElementById("btnUser3Mo");
-            const display = document.getElementById("priceUserDisplay");
-            if(months === 1) {
-                btn1.className = "flex-1 py-1.5 rounded-lg bg-brand-teal text-white shadow-sm";
-                btn3.className = "flex-1 py-1.5 rounded-lg text-gray-500";
-                display.innerHTML = `Rp 15.000 <span class="text-xs font-normal text-gray-400">/ bulan</span>`;
-            } else {
-                btn1.className = "flex-1 py-1.5 rounded-lg text-gray-500";
-                btn3.className = "flex-1 py-1.5 rounded-lg bg-brand-teal text-white shadow-sm";
-                display.innerHTML = `Rp 35.000 <span class="text-xs font-normal text-gray-400">/ 3 bulan</span>`;
-            }
-        }
-
-        function toggleVendorDuration(months) {
-            selectedVendorDuration = months;
-            const btn1 = document.getElementById("btnVendor1Mo"); const btn3 = document.getElementById("btnVendor3Mo");
-            const display = document.getElementById("priceVendorDisplay");
-            if(months === 1) {
-                btn1.className = "flex-1 py-1.5 rounded-lg bg-amber-500 text-white shadow-sm";
-                btn3.className = "flex-1 py-1.5 rounded-lg text-gray-500";
-                display.innerHTML = `Rp 35.000 <span class="text-xs font-normal text-gray-400">/ bulan</span>`;
-            } else {
-                btn1.className = "flex-1 py-1.5 rounded-lg text-gray-500";
-                btn3.className = "flex-1 py-1.5 rounded-lg bg-amber-500 text-white shadow-sm";
-                display.innerHTML = `Rp 85.000 <span class="text-xs font-normal text-gray-400">/ 3 bulan</span>`;
-            }
         }
 
         function bukaDetailProduk(id) {
@@ -707,33 +451,17 @@
             document.getElementById("detailLokasi").innerText = p.lokasi;
             document.getElementById("detailRating").innerText = p.rating;
             document.getElementById("detailIcon").className = `fas ${p.icon} text-7xl brand-teal`;
-            document.getElementById("detailTrustedBadge").className = p.isPremiumVendor ? "text-[10px] badge-premium px-2 py-0.5 rounded font-bold" : "hidden";
-            document.getElementById("rentPakaiAsuransi").checked = false;
-
-            // Render Ulasan Produk Spesifik
-            const reviewContainer = document.getElementById("detailReviewContainer"); reviewContainer.innerHTML = "";
-            const listReview = BANK_REVIEW[id] || [{ nama: "Dewi Lestari", rating: 5, tgl: "19 Mei 2026", teks: "Kualitas bintang lima, unit bekerja dengan sangat baik tanpa kendala." }];
-            listReview.forEach(r => {
-                reviewContainer.innerHTML += `
-                    <div class="p-2.5 bg-gray-50 rounded-xl border border-gray-100">
-                        <div class="flex justify-between font-bold text-gray-700"><span>${r.nama}</span><span class="text-gray-400 font-normal">${r.tgl}</span></div>
-                        <p class="text-gray-600 italic mt-1">"${r.teks}"</p>
-                    </div>`;
-            });
-
-            // ALGORITMA PRODUK SERUPA BERDASARKAN LOKASI OPERASIONAL YANG SAMA
-            const serupaContainer = document.getElementById("detailProdukSerupaContainer"); serupaContainer.innerHTML = "";
-            const listSerupa = DATA_PRODUK.filter(item => item.lokasi === p.lokasi && item.id !== p.id).slice(0, 3);
             
-            const targetList = listSerupa.length > 0 ? listSerupa : DATA_PRODUK.filter(item => item.id !== p.id).slice(0, 3);
-            targetList.forEach(s => {
+            const reviewContainer = document.getElementById("detailReviewContainer"); reviewContainer.innerHTML = "";
+            const listReview = BANK_REVIEW[id] || [{ nama: "Sewa User", rating: 5, tgl: "19 Mei 2026", teks: "Barang mulus original." }];
+            listReview.forEach(r => { reviewContainer.innerHTML += `<div class="p-2 bg-gray-50 rounded-lg border mb-1"><strong>${r.nama}</strong>: ${r.teks}</div>`; });
+
+            const serupaContainer = document.getElementById("detailProdukSerupaContainer"); serupaContainer.innerHTML = "";
+            DATA_PRODUK.filter(item => item.id !== p.id).slice(0, 3).forEach(s => {
                 serupaContainer.innerHTML += `
-                    <div onclick="bukaDetailProduk(${s.id})" class="p-2 bg-gray-50 rounded-xl border hover:border-teal-400 cursor-pointer flex flex-col justify-between transition-all">
-                        <div class="flex items-center gap-1.5">
-                            <i class="fas ${s.icon} brand-teal text-xs"></i>
-                            <h4 class="font-bold text-gray-800 text-[11px] line-clamp-1">${s.nama}</h4>
-                        </div>
-                        <p class="text-amber-600 font-extrabold text-[11px] mt-1">Rp ${s.harga.toLocaleString('id-ID')}/hari</p>
+                    <div onclick="bukaDetailProduk(${s.id})" class="p-2 bg-gray-50 rounded-xl border cursor-pointer">
+                        <h4 class="font-bold text-gray-800 text-[11px] line-clamp-1">${s.nama}</h4>
+                        <p class="text-amber-600 font-extrabold text-[11px]">Rp ${s.harga.toLocaleString('id-ID')}</p>
                     </div>`;
             });
             showPage('detailPage');
@@ -745,176 +473,18 @@
                 const diffDays = Math.ceil(Math.abs(new Date(tgl2) - new Date(tgl1)) / (1000 * 60 * 60 * 24)) + 1;
                 document.getElementById("liveDurasi").innerText = `${diffDays} Hari`;
                 let sewaDasar = diffDays * produkAktifGlobal.harga; document.getElementById("billSewaDasar").innerText = sewaDasar.toLocaleString('id-ID');
-                let biayaAsuransi = document.getElementById("rentPakaiAsuransi").checked ? 12500 : 0;
-                document.getElementById("billAsuransi").innerText = biayaAsuransi.toLocaleString('id-ID');
+                let biayaAsuransi = document.getElementById("rentPakaiAsuransi").checked ? 12500 : 0; document.getElementById("billAsuransi").innerText = biayaAsuransi.toLocaleString('id-ID');
                 document.getElementById("liveTotal").innerText = (sewaDasar + biayaAsuransi + 3000).toLocaleString('id-ID');
             }
         }
 
-        function prosesSewaSimulasi() {
-            if(!currentUser) { alert("Silakan masuk/login sebagai Penyewa terlebih dahulu!"); openLoginModal(); return; }
-            const tgl1 = document.getElementById("rentMulai").value; const tgl2 = document.getElementById("rentSelesai").value;
-            if(!tgl1 || !tgl2) { alert("Peringatan: Isi tanggal durasi sewa!"); return; }
-            
-            const diffDays = Math.ceil(Math.abs(new Date(tgl2) - new Date(tgl1)) / (1000 * 60 * 60 * 24)) + 1;
-            let sewaDasar = diffDays * produkAktifGlobal.harga;
-            let biayaAsuransi = document.getElementById("rentPakaiAsuransi").checked ? 12500 : 0;
-
-            TRANSAKSI.push({
-                id: Date.now(), produk: produkAktifGlobal.nama, penyewa: profileBudi.nama, kontak: profileBudi.kontak,
-                durasi: diffDays, opsi: document.getElementById("rentOpsiKirim").value, metode: document.getElementById("rentPaymentMethod").value,
-                total: sewaDasar + biayaAsuransi + 3000, sewaDasar: sewaDasar, tipeTrans: "aktif", status: "Menunggu Validasi Jaminan"
-            });
-            document.getElementById("cartBadge").innerText = TRANSAKSI.filter(t => t.tipeTrans === 'aktif').length;
-            alert("Permohonan Sewa Berhasil Diajukan!"); showPage('chatPage');
-        }
-
-        function renderCartPage() {
-            const container = document.getElementById("userOrderContainer"); container.innerHTML = "";
-            const listSaring = TRANSAKSI.filter(t => t.tipeTrans === activeUserTab);
-            if(listSaring.length === 0) { container.innerHTML = `<p class="text-gray-400 text-center py-6">Belum ada catatan aktivitas transaksi pada menu ini.</p>`; return; }
-            listSaring.forEach(t => {
-                container.innerHTML += `
-                    <div class="bg-white p-4 rounded-2xl border shadow-sm text-xs flex justify-between items-center">
-                        <div>
-                            <h4 class="font-bold text-gray-900 text-sm">${t.produk}</h4>
-                            <p class="text-gray-500">Durasi: ${t.durasi} Hari | Sistem Kirim: <strong>${t.opsi}</strong></p>
-                            <p class="brand-teal font-bold mt-1">Total Biaya: Rp ${t.total.toLocaleString('id-ID')}</p>
-                        </div>
-                        <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border">${t.status}</span>
-                    </div>`;
-            });
-        }
-
-        function switchUserOrderTab(tabName) {
-            activeUserTab = tabName;
-            document.getElementById("tabUserAktif").className = tabName === 'aktif' ? "py-2 px-4 bg-white border-t border-x rounded-t-lg text-brand-navy border-gray-200" : "py-2 px-4 text-gray-500";
-            document.getElementById("tabUserRiwayat").className = tabName === 'riwayat' ? "py-2 px-4 bg-white border-t border-x rounded-t-lg text-brand-navy border-gray-200" : "py-2 px-4 text-gray-500";
-            renderCartPage();
-        }
-
-        function triggerSimulasiVerifikasiKTP() {
-            isUserKtpVerified = true;
-            document.getElementById("navVerifBadge").classList.remove("hidden");
-            document.getElementById("profileVerifBadgeIcon").classList.remove("hidden");
-            document.getElementById("profileVerifText").className = "text-[10px] bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded-full";
-            document.getElementById("profileVerifText").innerHTML = `<i class="fas fa-check-circle"></i> Dokumen Identitas Terverifikasi`;
-            document.getElementById("navUserBtn").innerHTML = `<i class="fas fa-user-check text-teal-300"></i> ${profileBudi.nama}`;
-            alert("Berkas Resmi Anda Lolos Verifikasi Sistem Keamanan.");
-        }
-
-        function beliPremiumSimulasi(tipe) {
-            if(!currentUser) { alert("Harap login lebih dahulu!"); openLoginModal(); return; }
-            if(tipe === 'user') {
-                isUserPremium = true;
-                document.getElementById("profilePremiumTag").innerHTML = `<span class="badge-premium px-2 py-0.5 rounded font-bold"><i class="fas fa-crown"></i> Premium Elite</span>`;
-                alert("Selamat! Akun Anda Aktif Menjadi Premium Elite!");
-            } else {
-                isVendorPremium = true; DATA_PRODUK.forEach(p => p.isPremiumVendor = true); renderHomeProducts(DATA_PRODUK);
-                document.getElementById("vendorTrustedBadgePanel").classList.remove("hidden");
-                alert("Selamat! Lapak Anda Aktif Menjadi Trusted Owner Store!");
-            }
-            showPage('homePage');
-        }
-
-        function handleUserNavClick() {
-            if (currentUser === 'user') { document.getElementById("editNama").value = profileBudi.nama; document.getElementById("editKontak").value = profileBudi.kontak; document.getElementById("editAlamat").value = "Jl. Coblong Raya No. 42B, Bandung"; showPage('profilePage'); }
-            else if (currentUser === 'vendor') { showPage('vendorPage'); }
-            else { openLoginModal(); }
-        }
-
-        function injectDummyDataAfterLogin() {
-            TRANSAKSI = [
-                { id: 999888, produk: "DJI Mavic Air 2 Drone Fly More Combo Pack", penyewa: "Budi Santoso", kontak: "081234567890", durasi: 3, opsi: "Kurir Instan Rentify", metode: "Saldo Rekber Rentify", total: 543000, sewaDasar: 540000, status: "Menunggu Validasi Jaminan", tipeTrans: "aktif" },
-                { id: 111222, produk: "Sony Alpha a7 III Mirrorless Camera Professional Set", penyewa: "Budi Santoso", kontak: "081234567890", durasi: 2, opsi: "Self-Pickup", metode: "Transfer Bank Manual", total: 503000, sewaDasar: 500000, status: "SELESAI / BARANG KEMBALI", tipeTrans: "riwayat" }
-            ];
-            document.getElementById("cartBadge").innerText = TRANSAKSI.filter(t => t.tipeTrans === 'aktif').length;
-            hitungLabaDashboardVendor();
-        }
-
-        function hitungLabaDashboardVendor() {
-            let kotor = 0; TRANSAKSI.filter(t => t.tipeTrans === 'riwayat').forEach(t => kotor += t.sewaDasar);
-            document.getElementById("dashLabaKotor").innerText = `Rp ${kotor.toLocaleString('id-ID')}`;
-            document.getElementById("dashLabaBersih").innerText = `Rp ${(kotor * 0.9).toLocaleString('id-ID')}`;
-            document.getElementById("dashTotalDeal").innerText = `${TRANSAKSI.filter(t => t.tipeTrans === 'riwayat').length} Order`;
-        }
-
-        function renderVendorDashboard(tab) {
-            const container = document.getElementById("vendorOrderList"); container.innerHTML = "";
-            const listSaring = TRANSAKSI.filter(t => t.tipeTrans === (tab === 'masuk' ? 'aktif' : 'riwayat'));
-            if(listSaring.length === 0) { container.innerHTML = `<p class="text-gray-400 text-center py-4">Tidak ada log order masuk.</p>`; return; }
-            listSaring.forEach(t => {
-                container.innerHTML += `
-                    <div class="bg-gray-50 p-3 rounded-xl border flex justify-between items-center">
-                        <div>
-                            <p class="font-bold text-gray-800">${t.prikut || t.produk}</p>
-                            <p class="text-gray-500 text-[11px]">Pemohon: ${t.penyewa} (${t.kontak})</p>
-                        </div>
-                        <button onclick="setujuiDealVendor(${t.id})" class="bg-brand-teal text-white px-3 py-1 rounded shadow font-bold text-[11px]">Sahkan DEAL</button>
-                    </div>`;
-            });
-        }
-
-        function setujuiDealVendor(id) {
-            const t = TRANSAKSI.find(item => item.id === id);
-            if(t) { t.tipeTrans = 'riwayat'; t.status = "SELESAI / DIARSIPKAN"; alert("Transaksi sukses disahkan!"); renderVendorDashboard('masuk'); hitungLabaDashboardVendor(); }
-        }
-
-        function renderVendorAssetList() {
-            const container = document.getElementById("vendorAssetGrid"); container.innerHTML = "";
-            DATA_PRODUK.forEach(p => {
-                container.innerHTML += `<div class="p-2 bg-gray-50 rounded border flex justify-between items-center"><p class="font-bold text-gray-700">${p.nama}</p><span class="text-teal-600 font-bold">Rp ${p.harga.toLocaleString('id-ID')}/hari</span></div>`;
-            });
-            document.getElementById("dashTotalAset").innerText = `${DATA_PRODUK.length} Barang`;
-        }
-
-        function vendorUploadProdukLogic() {
-            const nama = document.getElementById("vProdNama").value; const harga = parseInt(document.getElementById("vProdHarga").value); const lokasi = document.getElementById("vProdLokasi").value;
-            if(!nama || !harga) return;
-            DATA_PRODUK.unshift({ id: Date.now(), nama: nama, harga: harga, lokasi: lokasi, rating: "5.0", icon: "fa-box-open", isPremiumVendor: isVendorPremium });
-            renderHomeProducts(DATA_PRODUK); renderVendorAssetList();
-            alert("Katalog baru berhasil diterbitkan!"); document.getElementById("vProdNama").value = ""; document.getElementById("vProdHarga").value = "";
-        }
-
-        function kirimPesanSimulasi() {
-            const input = document.getElementById("chatInput"); if(!input.value.trim()) return;
-            const container = document.getElementById("chatMessages");
-            container.innerHTML += `<div class="bg-teal-500 text-white p-2 rounded-xl max-w-xs ml-auto shadow-sm text-right my-1">${input.value}</div>`;
-            input.value = ""; container.scrollTop = container.scrollHeight;
-        }
-
-        function showPage(pageId) {
-            document.querySelectorAll('.page-section').forEach(s => s.classList.add('hidden')); document.getElementById(pageId).classList.remove('hidden');
-            if(pageId === 'cartPage') renderCartPage();
-            if(pageId === 'vendorPage') { switchVendorDashboard('dashRingkasan'); renderVendorDashboard('masuk'); renderVendorAssetList(); }
-            window.scrollTo(0,0);
-        }
-
-        function switchVendorDashboard(id) {
-            document.querySelectorAll('.sub-dashboard-section').forEach(s => s.classList.add('hidden')); document.getElementById(id).classList.remove('hidden');
-            const tabs = { dashRingkasan: 'tabDash1', dashOrderan: 'tabDash2', dashInventaris: 'tabDash3', dashReviewAplikasi: 'tabDash4' };
-            Object.keys(tabs).forEach(k => document.getElementById(tabs[k]).className = k === id ? "py-2.5 px-4 bg-white border-t border-x rounded-t-xl text-brand-navy border-gray-200" : "py-2.5 px-4 text-gray-500");
-        }
-
-        function logoutSistemAman() { currentUser = null; TRANSAKSI = []; document.getElementById("cartBadge").innerText = "0"; document.getElementById("navLogoutBtn").classList.add("hidden"); document.getElementById("navUserBtn").innerHTML = `<i class="fas fa-user-circle"></i> Masuk / Daftar`; document.getElementById("navVerifBadge").classList.add("hidden"); alert("Sesi dummy data dibersihkan."); showPage('homePage'); }
+        function showPage(pageId) { document.querySelectorAll('.page-section').forEach(s => s.classList.add('hidden')); document.getElementById(pageId).classList.remove('hidden'); }
         function openLoginModal() { document.getElementById("loginModal").classList.remove("hidden"); setTimeout(() => document.getElementById("loginModal").classList.add("opacity-100"), 50); }
         function closeLoginModal() { document.getElementById("loginModal").classList.add("hidden"); }
-        function checkVendorAccess() { if(currentUser === 'vendor') showPage('vendorPage'); else { alert("Silakan login sebagai akun Vendor."); openLoginModal(); } }
-        function toggleFAQ(id) { document.getElementById(id).classList.toggle("hidden"); }
-        function filterProdukHome() { const lok = document.getElementById("homeLokasi").value; renderHomeProducts(lok === "semua" ? DATA_PRODUK : DATA_PRODUK.filter(p => p.lokasi === lok)); }
-
-        function submitLoginSimulasi() {
-            const email = document.getElementById("loginEmail").value.trim();
-            if(email === "testuser@rentify.com") {
-                currentUser = 'user'; injectDummyDataAfterLogin();
-                document.getElementById("navUserBtn").innerHTML = `<i class="fas fa-user-check text-teal-300"></i> ${profileBudi.nama}`;
-                document.getElementById("navLogoutBtn").classList.remove("hidden"); closeLoginModal(); showPage('cartPage');
-            } else if(email === "vendor@rentify.com") {
-                currentUser = 'vendor'; injectDummyDataAfterLogin();
-                document.getElementById("navUserBtn").innerHTML = `<i class="fas fa-store-alt text-teal-300"></i> Portal Vendor`;
-                document.getElementById("navLogoutBtn").classList.remove("hidden"); closeLoginModal(); showPage('vendorPage');
-            } else { alert("Email simulasi salah!"); }
-        }
+        function submitLoginSimulasi() { currentUser = 'vendor'; closeLoginModal(); showPage('vendorPage'); }
+        function checkVendorAccess() { openLoginModal(); }
+        function handleUserNavClick() { openLoginModal(); }
+        function switchVendorDashboard(id) { document.querySelectorAll('.sub-dashboard-section').forEach(s => s.classList.add('hidden')); document.getElementById(id).classList.remove('hidden'); }
 
         renderHomeProducts(DATA_PRODUK);
     </script>
