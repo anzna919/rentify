@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="flex-1 max-w-xl relative">
-                    <input type="text" placeholder="Cari kamera, peralatan camping, perlengkapan hobi..." class="w-full pl-4 pr-12 py-2 rounded-md text-gray-900 focus:outline-none text-sm shadow-inner">
+                    <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Cari kamera, perlengkapan camping..." class="w-full pl-4 pr-12 py-2 rounded-md text-gray-900 focus:outline-none text-sm shadow-inner">
                     <button class="absolute right-1 top-1 bottom-1 px-4 bg-brand-teal text-white rounded-md"><i class="fas fa-search"></i></button>
                 </div>
 
@@ -914,8 +914,21 @@
                 document.getElementById("navLogoutBtn").classList.remove("hidden"); closeLoginModal(); showPage('vendorPage');
             } else { alert("Email simulasi salah!"); }
         }
+		function handleSearch() {
+   			const query = document.getElementById("searchInput").value.toLowerCase();
+    		const lokasi = document.getElementById("homeLokasi").value;
 
+    	// Filter berdasarkan teks dan lokasi yang sedang aktif
+    	let hasil = DATA_PRODUK.filter(p => {
+        const matchNama = p.nama.toLowerCase().includes(query);
+        const matchLokasi = (lokasi === "semua" || p.lokasi === lokasi);
+        return matchNama && matchLokasi;
+    	});
+
+    	renderHomeProducts(hasil);
+		}
         renderHomeProducts(DATA_PRODUK);
+		
     </script>
 </body>
 </html>
