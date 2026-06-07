@@ -50,7 +50,8 @@
                 </div>
 
                 <div class="flex-1 max-w-xl relative">
-                    <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Cari kamera, perlengkapan camping..." class="w-full pl-4 pr-12 py-2 rounded-md text-gray-900 focus:outline-none text-sm shadow-inner">
+                    <!-- Cari bagian ini di header dan ganti jadi: -->
+					<input type="text" id="searchInput" oninput="handleSearch()" placeholder="Cari kamera, peralatan camping..." class="w-full pl-4 pr-12 py-2 rounded-md text-gray-900 focus:outline-none text-sm shadow-inner">
                     <button class="absolute right-1 top-1 bottom-1 px-4 bg-brand-teal text-white rounded-md"><i class="fas fa-search"></i></button>
                 </div>
 
@@ -917,16 +918,17 @@
 		function handleSearch() {
    			const query = document.getElementById("searchInput").value.toLowerCase();
     		const lokasi = document.getElementById("homeLokasi").value;
-
-    	// Filter berdasarkan teks dan lokasi yang sedang aktif
-    	let hasil = DATA_PRODUK.filter(p => {
-        const matchNama = p.nama.toLowerCase().includes(query);
-        const matchLokasi = (lokasi === "semua" || p.lokasi === lokasi);
-        return matchNama && matchLokasi;
-    	});
-
-    	renderHomeProducts(hasil);
-		}
+    
+    		// Filter data berdasarkan kata kunci (nama) dan lokasi
+    		const hasil = DATA_PRODUK.filter(p => {
+        	const matchNama = p.nama.toLowerCase().includes(query);
+        	const matchLokasi = (lokasi === "semua" || p.lokasi === lokasi);
+        	return matchNama && matchLokasi;
+    		});
+    
+    // Tampilkan hasil pencarian ke grid
+    renderHomeProducts(hasil);
+}
         renderHomeProducts(DATA_PRODUK);
 		
     </script>
