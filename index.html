@@ -915,6 +915,8 @@
                 document.getElementById("navLogoutBtn").classList.remove("hidden"); closeLoginModal(); showPage('vendorPage');
             } else { alert("Email simulasi salah!"); }
         }
+
+		renderHomeProducts(DATA_PRODUK);
 		function handleSearch() {
    			const query = document.getElementById("searchInput").value.toLowerCase();
     		const lokasi = document.getElementById("homeLokasi").value;
@@ -929,7 +931,6 @@
     // Tampilkan hasil pencarian ke grid
     renderHomeProducts(hasil);
 }
-        renderHomeProducts(DATA_PRODUK);
 		
     </script>
 </body>
