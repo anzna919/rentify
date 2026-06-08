@@ -56,15 +56,10 @@
                 </div>
 
                 <div class="flex items-center gap-6 text-xl px-2">
-                    <button onclick="showPage('wishlistPage')" class="hover:text-teal-300 relative focus:outline-none">
-   						 <i class="fas fa-shopping-cart"></i>
-    					<span id="wishlistBadge" class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
-					</button>
-
-					<button onclick="showPage('cartPage')" class="hover:text-teal-300 relative focus:outline-none">
-    				<i class="fas fa-history"></i>
-					</button>
-
+                    <button onclick="showPage('cartPage')" class="hover:text-teal-300 relative focus:outline-none">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cartBadge" class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
                     <button onclick="showPage('chatPage')" class="hover:text-teal-300 relative focus:outline-none">
                         <i class="fas fa-comment-dots"></i>
                         <span id="chatIndicator" class="hidden absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
@@ -227,7 +222,8 @@
     </main>
 
 
-    	<main id="detailPage" class="page-section hidden flex-1 max-w-7xl w-full mx-auto px-4 my-6">
+    <!-- ================= HALAMAN 2: DETAIL PRODUK + SEKSI PRODUK SERUPA ================= -->
+    <main id="detailPage" class="page-section hidden flex-1 max-w-7xl w-full mx-auto px-4 my-6">
         <button onclick="showPage('homePage')" class="mb-4 text-brand-navy font-bold text-sm flex items-center gap-1"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</button>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -246,66 +242,6 @@
                     </div>
                     <p class="text-sm text-gray-600 mb-2">Unit dipelihara dengan standar sterilisasi tinggi dan fungsionalitas prima sebelum diserahterimakan kepada pihak penyewa.</p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-2xl shadow-sm border text-xs">
-                    <h3 class="font-extrabold text-brand-navy mb-4 text-sm flex items-center gap-2">
-                        <i class="fas fa-comments text-teal-400"></i> Ulasan &amp; Review Pelanggan (Verified)
-                    </h3>
-                    <div id="detailReviewContainer" class="space-y-4"></div>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-sm border text-xs">
-                    <h3 class="font-extrabold text-gray-800 mb-4 text-sm flex items-center justify-between">
-                        <span><i class="fas fa-tags brand-teal mr-1"></i> Produk Serupa di Wilayah Terdekat</span>
-                        <span class="text-[10px] text-gray-400 font-normal">Alternatif hemat ongkir kirim</span>
-                    </h3>
-                    <div id="detailProdukSerupaContainer" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl shadow-md border h-fit space-y-4">
-                <div class="text-2xl font-black text-amber-600">Rp <span id="detailHarga">0</span> <span class="text-xs font-normal text-gray-400">/ hari</span></div>
-                
-                <div class="space-y-2 bg-gray-50 p-3 rounded-xl border text-xs">
-                    <label class="block font-bold text-gray-600">Durasi Penyewaan</label>
-                    <input type="date" id="rentMulai" onchange="hitungTotalSewa()" class="w-full p-2 border rounded mb-1 focus:outline-none">
-                    <input type="date" id="rentSelesai" onchange="hitungTotalSewa()" class="w-full p-2 border rounded focus:outline-none">
-                </div>
-
-                <div class="bg-gray-50 p-3 rounded-xl border text-xs">
-                    <label class="block font-bold text-gray-600 mb-1"><i class="fas fa-truck brand-teal"></i> Opsi Pengiriman</label>
-                    <select id="rentOpsiKirim" class="w-full p-2 border rounded bg-white focus:outline-none">
-                        <option value="Ambil Sendiri di Toko">Ambil Sendiri di Toko Vendor (Self-Pickup)</option>
-                        <option value="Kurir Instan Rentify">Kurir Instan Rentify (1 Jam Sampai)</option>
-                        <option value="Ekspedisi Logistik Reguler">Ekspedisi Logistik / Cargo Paket</option>
-                    </select>
-                </div>
-
-                <div class="bg-gray-50 p-3 rounded-xl border text-xs">
-                    <label class="block font-bold text-gray-600 mb-1"><i class="fas fa-credit-card text-emerald-500"></i> Metode Pembayaran</label>
-                    <select id="rentPaymentMethod" class="w-full p-2 border rounded bg-white focus:outline-none">
-                        <option value="Saldo Rekber Rentify">Saldo Rekber Rentify (Paling Aman)</option>
-                        <option value="Transfer Bank Manual">Transfer Bank Mandiri/BCA Manual</option>
-                        <option value="E-Wallet (Dana/Gopay)">Instan E-Wallet (Dana / GoPay)</option>
-                    </select>
-                </div>
-
-                <div class="bg-teal-50 border border-teal-200 p-3 rounded-xl text-xs flex items-start gap-2">
-                    <input type="checkbox" id="rentPakaiAsuransi" onchange="hitungTotalSewa()" class="mt-0.5 w-4 h-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500 cursor-pointer">
-                    <div>
-                        <label for="rentPakaiAsuransi" class="font-bold text-teal-900 cursor-pointer flex items-center gap-1">
-                            <i class="fas fa-shield-halved text-teal-600"></i> Tambah Proteksi Kilat (+Rp 12.500)
-                        </label>
-                        <p class="text-teal-700 text-[11px] mt-0.5">Proteksi fisik unit dari risiko insiden selama pemakaian.</p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 p-3 rounded-xl border text-[11px] space-y-1 text-gray-600">
-                    <div class="flex justify-between"><span>Biaya Sewa Unit:</span><span>Rp <span id="billSewaDasar">0</span></span></div>
-                    <div class="flex justify-between text-teal-600"><span>Proteksi Asuransi:</span><span>Rp <span id="billAsuransi">0</span></span></div>
-                    <div class="flex justify-between border-b pb-1 font-semibold text-gray-800"><span>Biaya Layanan Aplikasi:</span><span>Rp 3.000</span></div>
-                    <div class="flex justify-between text-xs pt-
-
 
                 <!-- Review Spesifik Per Produk -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border text-xs">
@@ -380,10 +316,6 @@
         </div>
     </main>
 
-	<main id="wishlistPage" class="page-section hidden flex-1 max-w-4xl w-full mx-auto px-4 my-6">
-    	<h2 class="text-xl font-bold mb-4 text-brand-navy"><i class="fas fa-shopping-cart mr-2"></i>Keranjang Wishlist Anda</h2>
-    	<div id="wishlistItemsContainer" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
-	</main>
 
     <!-- ================= HALAMAN 3: SEKSI KERANJANG & RIWAYAT USER ================= -->
     <main id="cartPage" class="page-section hidden flex-1 max-w-4xl w-full mx-auto px-4 my-6">
@@ -951,16 +883,8 @@
             input.value = ""; container.scrollTop = container.scrollHeight;
         }
 
-        function showPage(pageId) { 
-    document.querySelectorAll('.page-section').forEach(s => s.classList.add('hidden')); 
-    document.getElementById(pageId).classList.remove('hidden'); 
-    
-    // TAMBAHAN: Kalau buka halaman wishlist, render datanya
-    if (pageId === 'wishlistPage') {
-        renderWishlistPage();
-    }
-}
-
+        function showPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(s => s.classList.add('hidden')); document.getElementById(pageId).classList.remove('hidden');
             if(pageId === 'cartPage') renderCartPage();
             if(pageId === 'vendorPage') { switchVendorDashboard('dashRingkasan'); renderVendorDashboard('masuk'); renderVendorAssetList(); }
             window.scrollTo(0,0);
@@ -1007,69 +931,7 @@
     // Tampilkan hasil pencarian ke grid
     renderHomeProducts(hasil);
 }
-	// Variable untuk menampung data wishlist
-let WISHLIST_DATA = [];
-
-// Fungsi memasukkan barang ke keranjang wishlist
-function tambahKeWishlist(id) {
-    const produk = DATA_PRODUK.find(p => p.id === id);
-    
-    // Biar barangnya gak masuk double
-    if (WISHLIST_DATA.some(item => item.id === id)) {
-        alert(`${produk.nama} sudah ada di keranjang wishlist!`);
-        return;
-    }
-    
-    WISHLIST_DATA.push(produk);
-    updateWishlistBadge();
-    alert(`${produk.nama} berhasil dimasukkan ke keranjang!`);
-}
-
-// Fungsi update angka merah di ikon keranjang
-function updateWishlistBadge() {
-    const badge = document.getElementById("wishlistBadge");
-    if (WISHLIST_DATA.length > 0) {
-        badge.innerText = WISHLIST_DATA.length;
-        badge.classList.remove("hidden");
-    } else {
-        badge.classList.add("hidden");
-    }
-}
-
-// Fungsi menampilkan produk di halaman wishlist
-function renderWishlistPage() {
-    const container = document.getElementById("wishlistItemsContainer");
-    if (!container) return;
-
-    if (WISHLIST_DATA.length === 0) {
-        container.innerHTML = `<p class="col-span-full text-gray-400 text-center py-12">Keranjang wishlist lu masih kosong.</p>`;
-        return;
-    }
-
-    container.innerHTML = "";
-    WISHLIST_DATA.forEach(p => {
-        container.innerHTML += `
-            <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 flex flex-col justify-between p-3">
-                <div class="w-full h-32 bg-gray-100 flex items-center justify-center text-gray-400 mb-2">
-                    <i class="fas ${p.icon} text-4xl brand-teal"></i>
-                </div>
-                <h3 class="text-xs font-semibold line-clamp-2 text-gray-900">${p.nama}</h3>
-                <p class="mt-2 text-sm font-bold text-amber-600">Rp ${p.harga.toLocaleString('id-ID')}/hari</p>
-                <div class="flex gap-2 mt-3">
-                    <button onclick="bukaDetailProduk(${p.id})" class="flex-1 bg-brand-teal text-white py-1 rounded text-xs font-bold">Sewa</button>
-                    <button onclick="hapusDariWishlist(${p.id})" class="text-red-500 px-2"><i class="fas fa-trash-alt"></i></button>
-                </div>
-            </div>`;
-    });
-}
-
-// Fungsi hapus barang dari wishlist
-function hapusDariWishlist(id) {
-    WISHLIST_DATA = WISHLIST_DATA.filter(item => item.id !== id);
-    updateWishlistBadge();
-    renderWishlistPage();
-}
-	
+		
     </script>
 </body>
 </html>
